@@ -34,6 +34,5 @@ describe('Card', () => {
     it('renders the card Credit Available', () => {
         expect(card.find('h4').at(3).text()).toEqual(`£${props.card.creditAvailable}`);
     });
-
 });
 
