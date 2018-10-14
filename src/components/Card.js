@@ -4,7 +4,7 @@ export class Card extends Component {
     render() {
         const card = this.props.card;
         return (
-            <div className='card'>
+            <div className={card.selected ? 'card card-selected' : 'card'}>
                 <h2 className='card__section card__section--name'>{card.name}</h2>
                 <h3 className='card__section card__section--sub'>
                     {card.apr}% APR</h3>

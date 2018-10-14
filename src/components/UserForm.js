@@ -30,17 +30,8 @@ export class UserForm extends Component {
 
     handleChange(event) {
         const { target: { name, value } } = event
-        if (isNaN(value)) {
-            this.setState({
-                [name]: value
-            })
-        } else {
-            this.setState({
-                [name]: parseInt(value)
-            })
-        }
+        this.setState({ [name]: value })
     }
-
 
     checkForm(state) {
         const { firstName, lastName, day, month, year, annualIncome, houseNumber, postcode } = state
@@ -66,12 +57,13 @@ export class UserForm extends Component {
         return (
             <div>
                 <Header />
-                <h2>Enter your details</h2>
+                <h2 className='sub-header'>Enter your details</h2>
                 <form onClick={event => (this.handleClick(event))}>
                     <div>
-                        <label><div>Title:</div>
+                        <label><div className='category'>Title</div>
                             <div>
                                 <select 
+                                    className='input input__select'
                                     name='title' 
                                     value={this.state.title} 
                                     onChange={event => this.handleChange(event)}
@@ -86,8 +78,9 @@ export class UserForm extends Component {
                         </label>
                     </div>
                     <div>
-                        <label><div>Name:</div>
+                        <label><div className='category'>Name</div>
                             <input 
+                                className='input input__text'
                                 type='text' 
                                 name='firstName' 
                                 placeholder='First Name' 
@@ -95,6 +88,7 @@ export class UserForm extends Component {
                                 onChange={event => this.handleChange(event)}
                             />
                             <input 
+                                className='input input__text'
                                 type='text' 
                                 name='lastName' 
                                 placeholder='Last Name' 
@@ -104,8 +98,9 @@ export class UserForm extends Component {
                         </label>
                     </div>   
                     <div>
-                        <label>Date of birth (DD/MM/YYYY)
+                        <label><div className='category'>Date of birth (DD/MM/YYYY)</div>
                             <input 
+                                className='input input__date'
                                 type='number' 
                                 name='day' 
                                 min='1' 
@@ -115,6 +110,7 @@ export class UserForm extends Component {
                                 onChange={event => this.handleChange(event)}
                             />
                             <input 
+                                className='input input__date'
                                 type='number' 
                                 name='month' 
                                 min='1' 
@@ -123,6 +119,7 @@ export class UserForm extends Component {
                                 onChange={event => this.handleChange(event)}
                             />
                             <input 
+                                className='input input__date'
                                 type='number' 
                                 name='year' 
                                 min='1918' 
@@ -133,8 +130,9 @@ export class UserForm extends Component {
                         </label>
                     </div>
                     <div>
-                        <label><div>What is your employment status?</div>
+                        <label><div className='category'>What is your employment status?</div>
                             <select 
+                                className='input input__select'
                                 name='employmentStatus' 
                                 value={this.state.employmentStatus} 
                                 onChange={event => this.handleChange(event)}
@@ -146,8 +144,9 @@ export class UserForm extends Component {
                         </label>
                     </div>
                     <div>
-                        <label><div>Annual income</div>
+                        <label><div className='category'>Annual income</div>
                             <input 
+                                className='input input__text'
                                 type='number' 
                                 name='annualIncome' 
                                 maxLength='10'
@@ -157,8 +156,9 @@ export class UserForm extends Component {
                         </label>
                     </div>
                     <div>
-                        <label><div>Address</div>
+                        <label><div className='category'>Address</div>
                             <input 
+                                className='input input__text'
                                 type='text' 
                                 name='houseNumber' 
                                 placeholder='House number' 
@@ -166,6 +166,7 @@ export class UserForm extends Component {
                                 onChange={event => this.handleChange(event)}
                             />
                             <input 
+                                className='input input__text'
                                 type='text' 
                                 name='postcode' 
                                 placeholder='Postcode' 
@@ -174,8 +175,8 @@ export class UserForm extends Component {
                             />
                         </label>
                     </div>
-                    <div>
-                        <input type='submit' value='submit' />
+                    <div className='button'>
+                        <input className='button-box' type='submit' value='submit' />
                     </div>
                 </form>
             </div>

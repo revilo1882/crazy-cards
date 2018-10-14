@@ -1,9 +1,9 @@
-.sub-header {
-    font-size: 2rem;
-    margin-left: $gutter-horizontal;
-}
-
 .button {
+    max-width: $grid-width;
+    margin-left: $gutter-horizontal;
+    @include clearfix;
+
+    &-box {
     text-transform: uppercase;
     text-decoration: none;
     margin-left: $gutter-horizontal;
@@ -11,10 +11,11 @@
     border-radius: 2rem;
     color: $color-white;
     outline: none;
-    padding: 15px 32px;
+    width: 16rem;
+    height: 4rem;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+
     margin: 4px 2px;
     cursor: pointer;
     transition: all .5s;
@@ -22,10 +23,10 @@
     &:hover {
         transform: translateY(-.3rem);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-
-        &::after {
-        transform: scaleX(1.4) scaleY(1.6);
-        opacity: 0;
-        }
     }  
 }
+
+
+}
+
+

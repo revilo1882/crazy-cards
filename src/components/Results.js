@@ -30,7 +30,7 @@ export class Results extends Component {
         return (
             <div>
                 <Header />
-                <h2>Results</h2>
+                <h2 className='sub-header'>Results</h2>
                 <div className='card-board'>
                     {cards.map(card => {
                         if (user.annualIncome > card.requirements.minimumAnnualIncome && 
@@ -48,7 +48,7 @@ export class Results extends Component {
                         }
                     })}
                 </div>
-                <div className='total-credit'>Total credit: £{totalCredit}</div>
+                <div className='sub-header'>Total credit: £{totalCredit}</div>
             </div>
         );
     }

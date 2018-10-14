@@ -15,7 +15,10 @@ export class App extends Component {
                         return <Card key={card.id} card={card} />
                     })}
                 </div>
-                <Link to='/userform' ><button className='button'>Check my eligibility</button></Link>
+                <div className='button'>
+                    <Link to='/userform' ><button className='button-box'>Check my eligibility</button></Link>
+                </div>
+                
             </div>
         );
     }

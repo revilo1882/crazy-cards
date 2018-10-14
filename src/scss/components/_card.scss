@@ -1,7 +1,7 @@
 .card-board {
     max-width: $grid-width;
     margin: 0 auto;
-    @include clearfix
+    @include clearfix;
 }
 
 .card {
@@ -31,22 +31,25 @@
         
       }
 
-      &--sub {
-        
-      }
-
       &--extra {
         font-weight: 300;
         display: inline-block;
       }
   }
 
-  &:hover {
-    transform: translateY(-.3rem);
+  &-selected {
     background-color: $color-secondary-light;
     color: $color-black;
+  }
+
+  &:hover {
+    transform: translateY(-.3rem);
+    // background-color: $color-secondary-light;
+    // color: $color-black;
     cursor: pointer;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
   }
+
+
 }
 

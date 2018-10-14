@@ -22,7 +22,7 @@ describe('App', () => {
         });
 
         it('sets the total credit state', () => {
-            expect(results.find('.total-credit').text()).toEqual('Total credit: £0');
+            expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £0');
         });
     });
 
@@ -54,7 +54,7 @@ describe('App', () => {
         });
 
         it('renders the correct total', () => {
-            expect(results.find('.total-credit').text()).toEqual('Total credit: £300');
+            expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £300');
         });
 
         describe('click on second card', () => {
@@ -71,7 +71,7 @@ describe('App', () => {
             });
 
             it('renders the correct total', () => {
-                expect(results.find('.total-credit').text()).toEqual('Total credit: £3300');
+                expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £3300');
             });
         });
 
@@ -89,7 +89,7 @@ describe('App', () => {
             });
 
             it('renders the correct total', () => {
-                expect(results.find('.total-credit').text()).toEqual('Total credit: £0');
+                expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £0');
             });
         });
     });

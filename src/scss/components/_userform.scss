@@ -1,0 +1,36 @@
+.input {
+    
+    height: 2.5rem;
+    margin: .3rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+    box-sizing: border-box;
+    margin-left: $gutter-horizontal;
+    margin-bottom: $gutter-vertical;
+    background-color: $color-secondary-light;
+    color: $color-black;
+    padding: 1rem;
+
+    &__text {
+        width: 15rem;
+    }
+    
+    &__date, &__select {
+        width: 9.5rem;
+    }
+
+    &::placeholder {
+    color: $color-white;
+    }
+
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+}
+
+.category {
+    margin-left: $gutter-horizontal;
+    font-size: 1.6rem;
+}
