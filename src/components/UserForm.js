@@ -12,7 +12,7 @@ export class UserForm extends Component {
             day: '',
             month: '',
             year: '',
-            employmentStatus: 'Full time',
+            employmentStatus: 'fullTime',
             annualIncome: '',
             houseNumber: '',
             postcode: '',
@@ -60,7 +60,7 @@ export class UserForm extends Component {
 
     render() {
         if (this.state.isValidated) {
-            return <Redirect to={{pathname: '/results', user: this.state }} />
+            return <Redirect to={{ pathname: '/results',  user: this.state  }} />
         }
         return (
             <div>
@@ -138,7 +138,7 @@ export class UserForm extends Component {
                                 value={this.state.employmentStatus} 
                                 onChange={event => this.handleChange(event)}
                             >
-                                <option defaultValue value="fullTime">Full time</option>
+                                <option value="fullTime">Full time</option>
                                 <option value="partTime">Part time</option>
                                 <option value="student">Student</option>
                             </select>
