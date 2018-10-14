@@ -31,20 +31,23 @@ export class Results extends Component {
             <div>
                 <Header />
                 <h2>Results</h2>
-                {cards.map(card => {
-                    if (user.annualIncome > card.requirements.minimumAnnualIncome && 
-                        card.requirements.validEmploymentStatus.includes(user.employmentStatus)) {
-                        return <div 
-                            className='valid'
-                            key={card.id} 
-                            onClick={() => this.selectCard(card.creditAvailable, card.selected = !card.selected)} 
-                        >
-                            <Card key={card.id} card={card} />
-                        </div>
-                    } else {
-                        return null
-                    }
-                })}
+                <div className='card-board'>
+                    {cards.map(card => {
+                        if (user.annualIncome > card.requirements.minimumAnnualIncome && 
+                            card.requirements.validEmploymentStatus.includes(user.employmentStatus)) {
+                            return ( 
+                                <div 
+                                    className='valid' 
+                                    key={card.id} onClick={() => this.selectCard(card.creditAvailable, card.selected = !card.selected)}
+                                >
+                                    <Card card={card} />
+                                </div>
+                            )
+                        } else {
+                            return null
+                        }
+                    })}
+                </div>
                 <div className='total-credit'>Total credit: £{totalCredit}</div>
             </div>
         );

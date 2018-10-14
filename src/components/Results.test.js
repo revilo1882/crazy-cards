@@ -28,15 +28,15 @@ describe('App', () => {
 
     describe('rendering the correct number of cards', () => {
         it('renders correct cards for user1', () => {
-            expect(results.find('Card').length).toEqual(2);
+            expect(results.find('.valid').length).toEqual(2);
         });
 
         it('renders correct cards for user2', () => {
-            expect(results2.find('Card').length).toEqual(3);
+            expect(results2.find('.valid').length).toEqual(3);
         });
 
         it('renders correct cards for user3', () => {
-            expect(results3.find('Card').length).toEqual(1);
+            expect(results3.find('.valid').length).toEqual(1);
         });
     });
 

@@ -20,19 +20,19 @@ describe('Card', () => {
     });
 
     it('renders the card Apr', () => {
-        expect(card.find('h4').at(0).text()).toEqual(`${props.card.apr}%`);
+        expect(card.find('h3').at(0).text()).toEqual(`${props.card.apr}% APR`);
     });
 
     it('renders the card Balance Transfer Offer Duration', () => {
-        expect(card.find('h4').at(1).text()).toEqual(`${props.card.balanceTransferOfferDuration} months`);
+        expect(card.find('h3').at(1).text()).toEqual(`${props.card.balanceTransferOfferDuration} months balance transfer offer duration`);
     });
 
     it('renders the card Purchase Offer Duration', () => {
-        expect(card.find('h4').at(2).text()).toEqual(`${props.card.purchaseOfferDuration} months`);
+        expect(card.find('h3').at(2).text()).toEqual(`${props.card.purchaseOfferDuration} months 0% purchase offer duration`);
     });
 
     it('renders the card Credit Available', () => {
-        expect(card.find('h4').at(3).text()).toEqual(`£${props.card.creditAvailable}`);
+        expect(card.find('h3').at(3).text()).toEqual(`£${props.card.creditAvailable} credit available`);
     });
 });
 

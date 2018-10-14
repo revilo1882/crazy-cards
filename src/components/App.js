@@ -9,10 +9,13 @@ export class App extends Component {
         return (
             <div>
                 <Header />
-                {cards.map(card => {
-                    return <Card key={card.id} card={card} />
-                })}
-                <Link to='/userform' ><button>Check my eligibility</button></Link>
+                <h2 className='sub-header'>All available cards:</h2>
+                <div className='card-board'>
+                    {cards.map(card => {
+                        return <Card key={card.id} card={card} />
+                    })}
+                </div>
+                <Link to='/userform' ><button className='button'>Check my eligibility</button></Link>
             </div>
         );
     }

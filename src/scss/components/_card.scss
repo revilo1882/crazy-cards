@@ -1,0 +1,52 @@
+.card-board {
+    max-width: $grid-width;
+    margin: 0 auto;
+    @include clearfix
+}
+
+.card {
+  width: calc((100% - 7 * #{$gutter-horizontal}) / 3);
+  float: left;
+  border-radius: 3rem;
+  margin-left: $gutter-horizontal;
+  margin-right: $gutter-horizontal;
+  margin-top: $gutter-vertical;
+  margin-bottom: $gutter-vertical;
+  text-align: center;
+  height: 100%;
+  background-color: $color-secondary-dark;
+  position: relative;
+  transition: all .5s;
+  color: $color-white;
+  
+
+  &__section {
+      height:12%;
+      font-weight: 400;
+      
+
+      &--name {
+        text-transform: uppercase;
+        font-size: 2rem;
+        
+      }
+
+      &--sub {
+        
+      }
+
+      &--extra {
+        font-weight: 300;
+        display: inline-block;
+      }
+  }
+
+  &:hover {
+    transform: translateY(-.3rem);
+    background-color: $color-secondary-light;
+    color: $color-black;
+    cursor: pointer;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+  }
+}
+
