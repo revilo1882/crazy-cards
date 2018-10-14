@@ -7,7 +7,7 @@ export const cards = [
     purchaseOfferDuration: 6,
     creditAvailable: 1200,
     requirements: {
-      validEmploymentStatus: ['student'],
+      validEmploymentStatus: ['Student'],
       minimumAnnualIncome: 0
     },
     selected: false
@@ -20,7 +20,7 @@ export const cards = [
     purchaseOfferDuration: 0,
     creditAvailable: 300,
     requirements: {
-      validEmploymentStatus: ['fullTime', 'partTime', 'student'],
+      validEmploymentStatus: ['Full Time', 'Part Time', 'Student'],
       minimumAnnualIncome: 0
     },
     selected: false
@@ -33,7 +33,7 @@ export const cards = [
     purchaseOfferDuration: 6,
     creditAvailable: 3000,
     requirements: {
-      validEmploymentStatus: ['fullTime', 'partTime', 'student'],
+      validEmploymentStatus: ['Full Time', 'Part Time', 'Student'],
       minimumAnnualIncome: 16000
     },
     selected: false

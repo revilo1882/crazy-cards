@@ -7,13 +7,13 @@ export class UserForm extends Component {
         super(props);
 
         this.state = {
-            title: 'mr',
+            title: 'Mr',
             firstName: '',
             lastName: '',
             day: '',
             month: '',
             year: '',
-            employmentStatus: 'fullTime',
+            employmentStatus: 'Full Time',
             annualIncome: '',
             houseNumber: '',
             postcode: '',
@@ -68,11 +68,11 @@ export class UserForm extends Component {
                                     value={this.state.title} 
                                     onChange={event => this.handleChange(event)}
                                 >
-                                    <option value="mr">Mr</option>
-                                    <option value="mrs">Mrs</option>
-                                    <option value="miss">Miss</option>
-                                    <option value="ms">Ms</option>
-                                    <option value="dr">Dr</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Miss">Miss</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Dr">Dr</option>
                                 </select>                            
                             </div>                 
                         </label>
@@ -137,9 +137,9 @@ export class UserForm extends Component {
                                 value={this.state.employmentStatus} 
                                 onChange={event => this.handleChange(event)}
                             >
-                                <option value="fullTime">Full time</option>
-                                <option value="partTime">Part time</option>
-                                <option value="student">Student</option>
+                                <option value="Full Time">Full time</option>
+                                <option value="Part Time">Part time</option>
+                                <option value="Student">Student</option>
                             </select>
                         </label>
                     </div>

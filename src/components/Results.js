@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './headerComponent/Header'
 import Card from './Card';
+import UserDetails from './UserDetails';
 import { cards } from '../data/fixtures';
 
 export class Results extends Component {
@@ -30,7 +31,8 @@ export class Results extends Component {
         return (
             <div>
                 <Header />
-                <h2 className='sub-header'>Results</h2>
+                <h2 className='sub-header'>Please see the cards available based upon the information supplied</h2>
+                <UserDetails user={user}/>
                 <div className='card-board'>
                     {cards.map(card => {
                         if (user.annualIncome > card.requirements.minimumAnnualIncome && 

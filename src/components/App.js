@@ -11,8 +11,10 @@ export class App extends Component {
                 <Header />
                 <h2 className='sub-header'>All available cards:</h2>
                 <div className='card-board'>
-                    {cards.map(card => {
-                        return <Card key={card.id} card={card} />
+                    {cards.map(card => {  
+                        return (card.selected = false,
+                            <Card key={card.id} card={card} />
+                        )
                     })}
                 </div>
                 <div className='button'>

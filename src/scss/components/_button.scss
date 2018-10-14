@@ -1,12 +1,12 @@
 .button {
     max-width: $grid-width;
+    margin-top: $gutter-vertical;
     margin-left: $gutter-horizontal;
     @include clearfix;
 
     &-box {
     text-transform: uppercase;
     text-decoration: none;
-    margin-left: $gutter-horizontal;
     background-color: $color-primary;
     border-radius: 2rem;
     color: $color-white;

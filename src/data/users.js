@@ -1,12 +1,12 @@
 export const user1 = {
     user: {
-        title: 'mr',
+        title: 'Mr',
         firstName: 'Ollie',
         lastName: 'Murpree',
         day: 1,
         month: 7,
         year: 1970,
-        employmentStatus: 'fullTime',
+        employmentStatus: 'Full Time',
         annualIncome: 34000,
         houseNumber: 700,
         postcode: 'BS14 9PR'
@@ -15,13 +15,13 @@ export const user1 = {
 
 export const user2 = {
     user: {
-        title: 'miss',
+        title: 'Miss',
         firstName: 'Elizabeth',
         lastName: 'Edmundson',
         day: 29,
         month: 6,
         year: 1984,
-        employmentStatus: 'student',
+        employmentStatus: 'Student',
         annualIncome: 17000,
         houseNumber: 343,
         postcode: 'TS25 2NF'
@@ -30,13 +30,13 @@ export const user2 = {
 
 export const user3 = {
     user: {
-        title: 'mr',
+        title: 'Mr',
         firstName: 'Trevor',
         lastName: 'Rieck',
         day: 7,
         month: 9,
         year: 1990,
-        employmentStatus: 'partTime',
+        employmentStatus: 'Part Time',
         annualIncome: 15000,
         houseNumber: 343,
         postcode: 'TS25 9NF'
