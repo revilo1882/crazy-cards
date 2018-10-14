@@ -68,9 +68,9 @@ describe('App', () => {
             expect(userform.state().postcode).toEqual(user1.postcode);
         });
 
-        // it('changes the is validated in state', () => {
-        //     userform.find('form').simulate('submit', { preventDefault() {} } );
-        //     expect(userform.state().isValidated).toBe(false);
-        // });
+        it('changes the is validated in state', () => {
+            userform.find('form').simulate('submit');
+            expect(userform.state().isValidated).toBe(false);
+        });
     });
 });

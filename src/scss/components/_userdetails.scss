@@ -1,0 +1,11 @@
+.user {
+    margin-left: $gutter-horizontal;
+
+    &__details {
+
+        &--capital {
+            text-transform: uppercase;
+        }
+    }
+
+}

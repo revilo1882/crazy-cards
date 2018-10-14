@@ -58,7 +58,7 @@ export class UserForm extends Component {
             <div>
                 <Header />
                 <h2 className='sub-header'>Enter your details</h2>
-                <form onClick={event => (this.handleClick(event))}>
+                <form >
                     <div>
                         <label><div className='category'>Title</div>
                             <div>
@@ -82,6 +82,7 @@ export class UserForm extends Component {
                             <input 
                                 className='input input__text'
                                 type='text' 
+                                minLength='1'
                                 name='firstName' 
                                 placeholder='First Name' 
                                 value={this.state.firstName}
@@ -90,6 +91,7 @@ export class UserForm extends Component {
                             <input 
                                 className='input input__text'
                                 type='text' 
+                                minLength='1'
                                 name='lastName' 
                                 placeholder='Last Name' 
                                 value={this.state.lastName}
@@ -113,7 +115,8 @@ export class UserForm extends Component {
                                 className='input input__date'
                                 type='number' 
                                 name='month' 
-                                min='1' 
+                                min='1'
+                                max='12'
                                 placeholder='MM' 
                                 value={this.state.month}
                                 onChange={event => this.handleChange(event)}
@@ -123,6 +126,7 @@ export class UserForm extends Component {
                                 type='number' 
                                 name='year' 
                                 min='1918' 
+                                max='2018'
                                 placeholder='YYYY' 
                                 value={this.state.year}
                                 onChange={event => this.handleChange(event)}
@@ -148,8 +152,9 @@ export class UserForm extends Component {
                             <input 
                                 className='input input__text'
                                 type='number' 
-                                name='annualIncome' 
-                                maxLength='10'
+                                name='annualIncome'
+                                min='1'
+                                max='1000000000'
                                 placeholder='£' value={this.state.annualIncome}
                                 onChange={event => this.handleChange(event)}
                             />
@@ -159,8 +164,9 @@ export class UserForm extends Component {
                         <label><div className='category'>Address</div>
                             <input 
                                 className='input input__text'
-                                type='text' 
-                                name='houseNumber' 
+                                type='number' 
+                                name='houseNumber'
+                                min='1'
                                 placeholder='House number' 
                                 value={this.state.houseNumber}
                                 onChange={event => this.handleChange(event)}
@@ -169,6 +175,7 @@ export class UserForm extends Component {
                                 className='input input__text'
                                 type='text' 
                                 name='postcode' 
+                                minLength='5'
                                 placeholder='Postcode' 
                                 value={this.state.postcode}
                                 onChange={event => this.handleChange(event)}
@@ -176,7 +183,7 @@ export class UserForm extends Component {
                         </label>
                     </div>
                     <div className='button'>
-                        <input className='button-box' type='submit' value='submit' />
+                        <input className='button-box' type='submit' />
                     </div>
                 </form>
             </div>
