@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export class UserForm extends Component {
     constructor(props) {
@@ -20,48 +20,60 @@ export class UserForm extends Component {
         };
     }
 
-    handleSubmit(event) {
-        if (this.state.isValidated) {
-            console.log('Annual income: ' + this.state.annualIncome);
+    handleClick(event) {
+        event.preventDefault()
+        if (this.checkForm(this.state)) {
+        this.setState({ isValidated: true })
         }
-        else {
-            console.log('error')
-        }
-        event.preventDefault();
     }
+
+    handleChange(event) {
+        const { target: { name, value } } = event
+        if (isNaN(value)) {
+            this.setState({
+                [name]: value
+            })
+        } else {
+            this.setState({
+                [name]: parseInt(value)
+            })
+        }
+    }
+
 
     checkForm(state) {
         const { firstName, lastName, day, month, year, annualIncome, houseNumber, postcode } = state
-        state.isValidated = 
-        firstName.length > 0 &&
+        
+        return (firstName.length > 0 &&
         lastName.length > 0 &&
         day > 0 &&
         day < 32 &&
         month > 0 &&
         month < 13 &&
-        year > 1918 &&
+        year > 1917 &&
         year < 2000 &&
         annualIncome > 0 &&
         annualIncome< 9999999999 &&
         houseNumber.length > 0 &&
-        postcode.length > 5
+        postcode.length > 5 )
      }
 
-
     render() {
-        this.checkForm(this.state)
+        if (this.state.isValidated) {
+            return <Redirect to={{pathname: '/results', user: this.state }} />
+        }
         return (
             <div>
                 <Link to='/'><h4>Home</h4></Link>
                 <h2>Enter your details</h2>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form onClick={event => (this.handleClick(event))}>
                     <div>
                         <label><div>Title:</div>
                             <div>
                                 <select 
                                     name='title' 
                                     value={this.state.title} 
-                                    onChange={event => this.setState({ title: event.target.value})}
+                                    onChange={event => this.handleChange(event)}
                                 >
                                     <option value="mr">Mr</option>
                                     <option value="mrs">Mrs</option>
@@ -79,14 +91,14 @@ export class UserForm extends Component {
                                 name='firstName' 
                                 placeholder='First Name' 
                                 value={this.state.firstName}
-                                onChange={event => this.setState({ firstName: event.target.value})}
+                                onChange={event => this.handleChange(event)}
                             />
                             <input 
                                 type='text' 
                                 name='lastName' 
                                 placeholder='Last Name' 
                                 value={this.state.lastName}
-                                onChange={event => this.setState({ lastName: event.target.value})}
+                                onChange={event => this.handleChange(event)}
                             />
                         </label>
                     </div>   
@@ -99,7 +111,7 @@ export class UserForm extends Component {
                                 max='31' 
                                 placeholder='DD' 
                                 value={this.state.day}
-                                onChange={event => this.setState({ day: event.target.value})} 
+                                onChange={event => this.handleChange(event)}
                             />
                             <input 
                                 type='number' 
@@ -107,7 +119,7 @@ export class UserForm extends Component {
                                 min='1' 
                                 placeholder='MM' 
                                 value={this.state.month}
-                                onChange={event => this.setState({ month: event.target.value})}
+                                onChange={event => this.handleChange(event)}
                             />
                             <input 
                                 type='number' 
@@ -115,7 +127,7 @@ export class UserForm extends Component {
                                 min='1918' 
                                 placeholder='YYYY' 
                                 value={this.state.year}
-                                onChange={event => this.setState({ year: event.target.value})} 
+                                onChange={event => this.handleChange(event)}
                             />
                         </label>
                     </div>
@@ -124,7 +136,7 @@ export class UserForm extends Component {
                             <select 
                                 name='employmentStatus' 
                                 value={this.state.employmentStatus} 
-                                onChange={event => this.setState({ employmentStatus: event.target.value })} 
+                                onChange={event => this.handleChange(event)}
                             >
                                 <option defaultValue value="fullTime">Full time</option>
                                 <option value="partTime">Part time</option>
@@ -139,7 +151,7 @@ export class UserForm extends Component {
                                 name='annualIncome' 
                                 maxLength='10'
                                 placeholder='£' value={this.state.annualIncome}
-                                onChange={event => this.setState({ annualIncome: event.target.value})} 
+                                onChange={event => this.handleChange(event)}
                             />
                         </label>
                     </div>
@@ -150,14 +162,14 @@ export class UserForm extends Component {
                                 name='houseNumber' 
                                 placeholder='House number' 
                                 value={this.state.houseNumber}
-                                onChange={event => this.setState({ houseNumber: event.target.value})}
+                                onChange={event => this.handleChange(event)}
                             />
                             <input 
                                 type='text' 
                                 name='postcode' 
                                 placeholder='Postcode' 
                                 value={this.state.postcode}
-                                onChange={event => this.setState({ postcode: event.target.value })}
+                                onChange={event => this.handleChange(event)}
                             />
                         </label>
                     </div>

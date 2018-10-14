@@ -34,5 +34,6 @@ export const users = [
         annualIncome: 34000,
         houseNumber: 343,
         postcode: 'TS25 9NF'
-    },
+    }
 ]
+
