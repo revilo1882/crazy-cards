@@ -12,10 +12,6 @@ describe('App', () => {
             expect(userform.find('h2').text()).toEqual('Enter your details');
         });
 
-        it('renders a link to the homepage', () => {
-            expect(userform.find('Link h4').text()).toEqual('Home')
-        });
-
         it('sets the intial state', () => {
             expect(userform.state().isValidated).toBe(false);
         });

@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from './components/App.js';
 import UserForm from './components/UserForm.js';
 import Results from './components/Results.js';
+import './css/style.css';
 
 
 ReactDOM.render(

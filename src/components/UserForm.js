@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import Header from './headerComponent/Header'
+import { Redirect } from 'react-router-dom';
 
 export class UserForm extends Component {
     constructor(props) {
@@ -64,7 +65,7 @@ export class UserForm extends Component {
         }
         return (
             <div>
-                <Link to='/'><h4>Home</h4></Link>
+                <Header />
                 <h2>Enter your details</h2>
                 <form onClick={event => (this.handleClick(event))}>
                     <div>

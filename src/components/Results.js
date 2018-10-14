@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Header from './headerComponent/Header'
 import Card from './Card';
 import { cards } from '../data/fixtures';
 
@@ -29,7 +29,7 @@ export class Results extends Component {
         const { user, totalCredit } = this.state
         return (
             <div>
-                <Link to='/'><h4>Home</h4></Link>
+                <Header />
                 <h2>Results</h2>
                 {cards.map(card => {
                     if (user.annualIncome > card.requirements.minimumAnnualIncome && 

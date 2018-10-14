@@ -17,10 +17,6 @@ describe('App', () => {
             expect(results.find('h2').text()).toEqual('Results');
         });
 
-        it('renders a link to the homepage', () => {
-            expect(results.find('Link h4').text()).toEqual('Home')
-        });
-
         it('sets the user state', () => {
             expect(results.state().user).toEqual(props.location.user);
         });
