@@ -20,13 +20,9 @@
     cursor: pointer;
     transition: all .5s;
 
-    &:hover {
-        transform: translateY(-.3rem);
-        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-    }  
+        &:hover {
+            transform: translateY(-.3rem);
+            box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+        }  
+    }
 }
-
-
-}
-
-

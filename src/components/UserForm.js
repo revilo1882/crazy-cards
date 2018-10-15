@@ -39,7 +39,16 @@ export class UserForm extends Component {
     }
 
     checkForm(state) {
-        const { firstName, lastName, day, month, year, annualIncome, houseNumber, postcode } = state
+        const { 
+            firstName, 
+            lastName, 
+            day, 
+            month, 
+            year, 
+            annualIncome, 
+            houseNumber, 
+            postcode 
+        } = state
     
         return (
             firstName.length > 0 &&

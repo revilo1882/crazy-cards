@@ -18,7 +18,9 @@ export class App extends Component {
                     })}
                 </div>
                 <div className='button'>
-                    <Link to='/userform' ><button className='button-box'>Check my eligibility</button></Link>
+                    <Link to='/userform' >
+                        <button className='button-box'>Check my eligibility</button>
+                    </Link>
                 </div>
                 
             </div>

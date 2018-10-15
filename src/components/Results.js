@@ -32,8 +32,9 @@ export class Results extends Component {
             <div>
                 <Header />
                 <UserDetails user={user} />
-                <h2 className='sub-header'>Please see the cards available based upon the information supplied above</h2>
-                
+                <h2 className='sub-header'>
+                    Please select one or more of the cards available to view your total credit
+                </h2>
                 <div className='card-board'>
                     {cards.map(card => {
                         if (user.annualIncome > card.requirements.minimumAnnualIncome && 
@@ -41,7 +42,13 @@ export class Results extends Component {
                             return ( 
                                 <div 
                                     className='valid' 
-                                    key={card.id} onClick={() => this.selectCard(card.creditAvailable, card.selected = !card.selected)}
+                                    key={card.id} 
+                                    onClick={() => 
+                                        this.selectCard(
+                                            card.creditAvailable, 
+                                            card.selected = !card.selected
+                                        )
+                                    }
                                 >
                                     <Card card={card} />
                                 </div>

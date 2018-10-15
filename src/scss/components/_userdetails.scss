@@ -2,10 +2,10 @@
     margin-left: $gutter-horizontal;
 
     &__details {
+        color: $color-tertiary-dark;
 
         &--capital {
             text-transform: uppercase;
         }
     }
-
 }

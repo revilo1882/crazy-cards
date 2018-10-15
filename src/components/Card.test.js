@@ -37,15 +37,18 @@ describe('Card', () => {
     });
 
     it('renders the card Balance Transfer Offer Duration', () => {
-        expect(card.find('h3').at(1).text()).toEqual(`${props.card.balanceTransferOfferDuration} months balance transfer offer duration`);
+        expect(card.find('h3').at(1).text())
+        .toEqual(`${props.card.balanceTransferOfferDuration} months balance transfer offer duration`);
     });
 
     it('renders the card Purchase Offer Duration', () => {
-        expect(card.find('h3').at(2).text()).toEqual(`${props.card.purchaseOfferDuration} months 0% purchase offer duration`);
+        expect(card.find('h3').at(2).text())
+        .toEqual(`${props.card.purchaseOfferDuration} months 0% purchase offer duration`);
     });
 
     it('renders the card Credit Available', () => {
-        expect(card.find('h3').at(3).text()).toEqual(`£${props.card.creditAvailable} credit available`);
+        expect(card.find('h3').at(3).text())
+        .toEqual(`£${props.card.creditAvailable} credit available`);
     });
 
     it('it sets the class name', () => {
