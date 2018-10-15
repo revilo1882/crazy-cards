@@ -8,7 +8,8 @@ const props = {
         apr: 20.5,
         balanceTransferOfferDuration: 3,
         purchaseOfferDuration: 6,
-        creditAvailable: 2000
+        creditAvailable: 2000,
+        selected: true
     }
 };
 
@@ -33,6 +34,10 @@ describe('Card', () => {
 
     it('renders the card Credit Available', () => {
         expect(card.find('h3').at(3).text()).toEqual(`£${props.card.creditAvailable} credit available`);
+    });
+
+    it('it sets the class name', () => {
+        expect(card.find('div').at(0).hasClass('card card-selected')).toBe(true);
     });
 });
 

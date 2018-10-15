@@ -18,6 +18,14 @@
   position: relative;
   transition: all .5s;
   color: $color-white;
+
+  @include respond(tab-port) {
+    width: calc((100% - 4 * #{$gutter-horizontal}) / 2);
+  }
+
+  @include respond(phone) {
+    width: calc((100% - 3 * #{$gutter-horizontal}));
+  }
   
 
   &__section {

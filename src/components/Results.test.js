@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Results } from './Results';
 import { user1, user2, user3 } from '../data/users';
+import { cards } from '../data/fixtures';
 
 const props = { location: user1 };
 const props2 = { location: user2 };
@@ -57,6 +58,10 @@ describe('App', () => {
             expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £300');
         });
 
+        it('sets selected to true', () => {
+            expect(cards[1].selected).toBe(true);
+        });
+
         describe('click on second card', () => {
             beforeEach(() => {
                 results.find('.valid').at(1).simulate('click');
@@ -90,6 +95,10 @@ describe('App', () => {
 
             it('renders the correct total', () => {
                 expect(results.find('.sub-header').at(1).text()).toEqual('Total credit: £0');
+            });
+
+            it('sets selected back to false', () => {
+                expect(cards[1].selected).toBe(false);
             });
         });
     });
