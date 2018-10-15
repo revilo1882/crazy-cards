@@ -10,7 +10,7 @@ export const cards = [
       validEmploymentStatus: ['Student'],
       minimumAnnualIncome: 0
     },
-    selected: false
+    selected: true
   },
   {
     id: 1,

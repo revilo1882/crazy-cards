@@ -14,7 +14,7 @@
   margin-bottom: $gutter-vertical;
   text-align: center;
   height: 100%;
-  background-color: $color-secondary-dark;
+  background-image: linear-gradient(to right bottom, $color-black, $color-grey-dark);
   position: relative;
   transition: all .5s;
   color: $color-white;
@@ -46,14 +46,12 @@
   }
 
   &-selected {
-    background-color: $color-secondary-light;
+    background-image: linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light);
     color: $color-black;
   }
 
   &:hover {
     transform: translateY(-.3rem);
-    // background-color: $color-secondary-light;
-    // color: $color-black;
     cursor: pointer;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
   }
