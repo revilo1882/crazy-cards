@@ -4,15 +4,14 @@
 
 An interactive ront end application which allow customers to enter their details and review credit cards that are applicable to their credit status.
 
-## Requireents
+## Requirements
 
 The application should return the list of cards available based upon a user's input. The user should be allowed to select one or more of the returned cards and see the details for the cards selected.  When multiple cards are selected, the total amount of credit available to the user on those cards should be displayed.
 
-## Available Cards
-
-The Student Life credit card is only available to customers with an employment status of Student.
-The anywhere card is available to anyone anywhere.
-The Liquid card is a card available to customers who have an income of more than £16000.
+- Available Cards:
+    - The Student Life credit card is only available to customers with an employment status of Student.
+    - The anywhere card is available to anyone anywhere.
+    - The Liquid card is a card available to customers who have an income of more than £16000.
 
 ## Installation
 
@@ -42,6 +41,8 @@ The app is also deployed on Heroku [here](https://dashboard.heroku.com/apps/salt
 
 - I built most of the functionality first as I anticipated building the userform and displaying the clickable results would take the most time.
 
+- After adding styling I made the app responsive by adjusting the card layout depending on the screen size.  No other elements have been adjusted as I felt it wasn't necessary.
+
 - The app is built into the following sections:
     - The Header has a clickable link to the start of the app.  
     - The App is is the hompage which renders each instance of the card component and has a button link to the user form.
@@ -51,14 +52,9 @@ The app is also deployed on Heroku [here](https://dashboard.heroku.com/apps/salt
     - The UserDetails displays the props of the user inputted.
 
 ## Further Work
-- I am happy with my tests and my test coverage overall however I had trouble testing the userform submit functionality.  After updating all the input forms I had the below test:
+Given more time I would have added the following:
 
-```javascript
-it('changes the is validated in state', () => {
-    userform.find('form').simulate('submit', { preventDefault() {} } );
-    expect(userform.state().isValidated).toBe(false);
-});
-```
-However all the states were undefined in the handleSubmit function and I didn't manage to mock the checkForm function.
-
-- Given more time I would have liked to have the userform display a specified error message depending on which input wasn't fullfilled correctly due to the preventdefault taking the error messages away.
+- Improve naming conventions of class names to follow the BEM model.
+- Added constants for the minim and maximum year input.
+- Added a valid day number check based upon the month.
+- Display currency values with thousands separated by commas.

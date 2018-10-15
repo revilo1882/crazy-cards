@@ -13,8 +13,20 @@ const props = {
     }
 };
 
+const props2 = {
+    card: {
+        name: 'Test Card',
+        apr: 20.5,
+        balanceTransferOfferDuration: 3,
+        purchaseOfferDuration: 6,
+        creditAvailable: 2000,
+        selected: false
+    }
+};
+
 describe('Card', () => {
     const card = shallow(<Card {...props} />);
+    const card2 = shallow(<Card {...props2} />);
 
     it('renders the card name', () => {
         expect(card.find('h2').text()).toEqual(props.card.name);
@@ -38,6 +50,10 @@ describe('Card', () => {
 
     it('it sets the class name', () => {
         expect(card.find('div').at(0).hasClass('card card-selected')).toBe(true);
+    });
+
+    it('it sets the class name', () => {
+        expect(card2.find('div').at(0).hasClass('card card-selected')).toBe(false);
     });
 });
 

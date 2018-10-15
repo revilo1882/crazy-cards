@@ -67,5 +67,37 @@ describe('App', () => {
             userform.find('input').at(7).simulate('change', { target: { name: 'postcode', value: user1.postcode } });
             expect(userform.state().postcode).toEqual(user1.postcode);
         });
-    });
+
+        describe('handle submit', () => {
+            beforeEach(() => {
+                userform.setState({
+                    title: user1.user.title,
+                    firstName: user1.user.firstName,
+                    lastName: user1.user.lastName,
+                    day: user1.user.day,
+                    month: user1.user.month,
+                    year: user1.user.year,
+                    employmentStatus: user1.user.empoymentStatus,
+                    annualIncome: user1.user.annualIncome,
+                    houseNumber: user1.user.houseNumber
+                })
+            });
+
+            it('changes the is validated in state', () => {
+                userform.setState({
+                    postcode: user1.user.postcode
+                })
+                userform.find('form').simulate('submit', { preventDefault() { } });
+                expect(userform.state().isValidated).toBe(false);
+            });
+
+            it('changes the error message in state', () => {
+                userform.setState({
+                    postcode: 'B11'
+                });
+                userform.find('form').simulate('submit', { preventDefault() { } });
+                expect(userform.state().error).toEqual('please fill out all input boxes');
+            });
+        });
+    });   
 });

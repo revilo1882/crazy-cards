@@ -29,7 +29,7 @@ export class UserForm extends Component {
         if (this.checkForm(this.state)) {
             this.setState({ isValidated: true })
         } else {
-            this.setState({ error: 'please check all form input boxes are valid' })
+            this.setState({ error: 'please fill out all input boxes' })
         }
     }
 
@@ -40,19 +40,21 @@ export class UserForm extends Component {
 
     checkForm(state) {
         const { firstName, lastName, day, month, year, annualIncome, houseNumber, postcode } = state
-
-        return (firstName.length > 0 &&
-        lastName.length > 0 &&
-        day > 0 &&
-        day < 32 &&
-        month > 0 &&
-        month < 13 &&
-        year > 1917 &&
-        year < 2000 &&
-        annualIncome > 0 &&
-        annualIncome< 9999999999 &&
-        houseNumber.length > 0 &&
-        postcode.length > 5)
+    
+        return (
+            firstName.length > 0 &&
+            lastName.length > 0 &&
+            day > 0 &&
+            day < 32 &&
+            month > 0 &&
+            month < 13 &&
+            year > 1917 &&
+            year < 2000 &&
+            annualIncome > 0 &&
+            annualIncome < 9999999999 &&
+            houseNumber > 0 &&
+            postcode.length < 5
+        )
      }
 
     render() {
