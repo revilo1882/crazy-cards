@@ -31,8 +31,9 @@ export class Results extends Component {
         return (
             <div>
                 <Header />
-                <h2 className='sub-header'>Please see the cards available based upon the information supplied</h2>
-                <UserDetails user={user}/>
+                <UserDetails user={user} />
+                <h2 className='sub-header'>Please see the cards available based upon the information supplied above</h2>
+                
                 <div className='card-board'>
                     {cards.map(card => {
                         if (user.annualIncome > card.requirements.minimumAnnualIncome && 

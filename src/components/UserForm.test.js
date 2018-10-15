@@ -67,10 +67,5 @@ describe('App', () => {
             userform.find('input').at(7).simulate('change', { target: { name: 'postcode', value: user1.postcode } });
             expect(userform.state().postcode).toEqual(user1.postcode);
         });
-
-        it('changes the is validated in state', () => {
-            userform.find('form').simulate('submit');
-            expect(userform.state().isValidated).toBe(false);
-        });
     });
 });

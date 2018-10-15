@@ -17,14 +17,19 @@ export class UserForm extends Component {
             annualIncome: '',
             houseNumber: '',
             postcode: '',
-            isValidated: false
+            isValidated: false,
+            error: ''
         };
+
+        this.handleChange = this.handleChange.bind(this)
     }
 
-    handleClick(event) {
+    handleSubmit(event) {
         event.preventDefault()
         if (this.checkForm(this.state)) {
-        this.setState({ isValidated: true })
+            this.setState({ isValidated: true })
+        } else {
+            this.setState({ error: 'please check all form input boxes are valid' })
         }
     }
 
@@ -35,7 +40,7 @@ export class UserForm extends Component {
 
     checkForm(state) {
         const { firstName, lastName, day, month, year, annualIncome, houseNumber, postcode } = state
-        
+
         return (firstName.length > 0 &&
         lastName.length > 0 &&
         day > 0 &&
@@ -47,18 +52,18 @@ export class UserForm extends Component {
         annualIncome > 0 &&
         annualIncome< 9999999999 &&
         houseNumber.length > 0 &&
-        postcode.length > 5 )
+        postcode.length > 5)
      }
 
     render() {
         if (this.state.isValidated) {
-            return <Redirect to={{ pathname: '/results',  user: this.state  }} />
+            return <Redirect to={{ pathname: '/results', user: this.state }} />
         }
         return (
             <div>
                 <Header />
                 <h2 className='sub-header'>Enter your details</h2>
-                <form >
+                <form onSubmit={this.handleSubmit.bind(this)}>
                     <div>
                         <label><div className='category'>Title</div>
                             <div>
@@ -66,7 +71,7 @@ export class UserForm extends Component {
                                     className='input input__select'
                                     name='title' 
                                     value={this.state.title} 
-                                    onChange={event => this.handleChange(event)}
+                                    onChange={this.handleChange}
                                 >
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>
@@ -86,7 +91,7 @@ export class UserForm extends Component {
                                 name='firstName' 
                                 placeholder='First Name' 
                                 value={this.state.firstName}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                             <input 
                                 className='input input__text'
@@ -95,7 +100,7 @@ export class UserForm extends Component {
                                 name='lastName' 
                                 placeholder='Last Name' 
                                 value={this.state.lastName}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                         </label>
                     </div>   
@@ -109,7 +114,7 @@ export class UserForm extends Component {
                                 max='31' 
                                 placeholder='DD' 
                                 value={this.state.day}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                             <input 
                                 className='input input__date'
@@ -119,7 +124,7 @@ export class UserForm extends Component {
                                 max='12'
                                 placeholder='MM' 
                                 value={this.state.month}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                             <input 
                                 className='input input__date'
@@ -129,7 +134,7 @@ export class UserForm extends Component {
                                 max='2018'
                                 placeholder='YYYY' 
                                 value={this.state.year}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                         </label>
                     </div>
@@ -139,7 +144,7 @@ export class UserForm extends Component {
                                 className='input input__select'
                                 name='employmentStatus' 
                                 value={this.state.employmentStatus} 
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             >
                                 <option value="Full Time">Full time</option>
                                 <option value="Part Time">Part time</option>
@@ -156,7 +161,7 @@ export class UserForm extends Component {
                                 min='1'
                                 max='1000000000'
                                 placeholder='£' value={this.state.annualIncome}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                         </label>
                     </div>
@@ -169,7 +174,7 @@ export class UserForm extends Component {
                                 min='1'
                                 placeholder='House number' 
                                 value={this.state.houseNumber}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                             <input 
                                 className='input input__text'
@@ -178,10 +183,11 @@ export class UserForm extends Component {
                                 minLength='5'
                                 placeholder='Postcode' 
                                 value={this.state.postcode}
-                                onChange={event => this.handleChange(event)}
+                                onChange={this.handleChange}
                             />
                         </label>
                     </div>
+                    <div className='error'>{this.state.error}</div>
                     <div className='button'>
                         <input className='button-box' type='submit' />
                     </div>

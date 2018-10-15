@@ -14,7 +14,7 @@ describe('App', () => {
 
     describe('initial state', () => {
         it('renders the title', () => {
-            expect(results.find('h2').text()).toEqual('Please see the cards available based upon the information supplied');
+            expect(results.find('h2').text()).toEqual('Please see the cards available based upon the information supplied above');
         });
 
         it('sets the user state', () => {
