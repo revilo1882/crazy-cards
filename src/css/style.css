@@ -41,7 +41,8 @@ body {
     transition: all .5s; }
     .button-box:hover {
       transform: translateY(-0.3rem);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      color: #5643fa; }
 
 .card-board {
   max-width: 114rem;
@@ -105,7 +106,7 @@ header {
     color: #fff;
     transition: all 1s; }
     header a:hover {
-      color: #000; }
+      color: #5643fa; }
 
 .sub-header {
   font-size: 2rem;

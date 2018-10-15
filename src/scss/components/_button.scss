@@ -23,6 +23,7 @@
         &:hover {
             transform: translateY(-.3rem);
             box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+            color: $color-tertiary-dark
         }  
     }
 }
