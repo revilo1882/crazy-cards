@@ -2,7 +2,7 @@
 
 ## Introduction
 
-An interactive ront end application which allow customers to enter their details and review credit cards that are applicable to their credit status.
+An interactive front end application which allow customers to enter their details and review credit cards that are applicable to their credit status.
 
 ## Requirements
 
@@ -29,19 +29,19 @@ To run the test and check the coverage run the below commands:
 $ npm test
 $ npm test -- --coverage
 ```
-The app is also deployed on Heroku [here](https://dashboard.heroku.com/apps/salty-wildwood-11557).
+The app is also deployed on Heroku [here](https://salty-wildwood-11557.herokuapp.com).
 
 ## Approach
 
-- My first course of action was to decide on the project's tech stack, I chose [React](https://reactjs.org/) for the frontend library and [Sass](https://sass-lang.com/) to compile the style sheets as I have been learning about both of these recently.
+- My first course of action was to decide on the project's tech stack, I chose [React](https://reactjs.org/) for the frontend library and [Sass](https://sass-lang.com/) to compile the style sheets as I have been learning about both of these recently and love the more I learn about them.
 
 - I drew up my anticipated design and decided through user stores that I would produce a 3 page webapp which meant that I could have a go at using [react-router-dom](https://www.npmjs.com/package/react-router-dom) which I haven't had much experience with.
 
-- I decided I wanted to build the app using a TDD approach using [Jest](https://jestjs.io/en/) and [Enzyme](https://github.com/airbnb/enzyme) for my tests.  
+- I decided I wanted to build the app using a TDD approach so that I owuldn't have to change any functionality to get my test coverage complete.  I used [Jest](https://jestjs.io/en/) and [Enzyme](https://github.com/airbnb/enzyme) for my tests.  
 
 - I built most of the functionality first as I anticipated building the userform and displaying the clickable results would take the most time.
 
-- After adding styling I made the app responsive by adjusting the card layout depending on the screen size.  No other elements have been adjusted as I felt it wasn't necessary.
+- After adding styling I made the app responsive by adjusting the card layout depending on the screen size.  No other elements have been adjusted as I felt it wasn't necessary on viewing all screen sizes.
 
 - The app is built into the following sections:
     - The Header has a clickable link to the start of the app.  
