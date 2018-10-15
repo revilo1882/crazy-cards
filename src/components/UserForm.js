@@ -53,7 +53,7 @@ export class UserForm extends Component {
             annualIncome > 0 &&
             annualIncome < 9999999999 &&
             houseNumber > 0 &&
-            postcode.length < 5
+            postcode.length > 5
         )
      }
 

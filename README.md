@@ -54,7 +54,8 @@ The app is also deployed on Heroku [here](https://dashboard.heroku.com/apps/salt
 ## Further Work
 Given more time I would have added the following:
 
-- Improve naming conventions of class names to follow the BEM model.
+- Improve naming conventions of class names to follow the BEM model and run through sass sheets again.
 - Added constants for the minim and maximum year input.
 - Added a valid day number check based upon the month.
 - Display currency values with thousands separated by commas.
+- Some of my tests were a bit rushed so would like to go through them again, althought I'm very happy with 100% test coverage.
